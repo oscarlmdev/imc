@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>IMC</title>
+</head>
+<body>
+    <header>
+        <h1>Calcula tu IMC</h1>
+        <h4>Descubre tu IMC y cómo mejorarlo</h4>
+    </header>
+    <section>
+        <div id="userInput">
+            <label for="Height">Altura(m)</label>
+            <input type="range" min="1.50" max="2.20" step="0.01">
+            <input id="height" type="number" aria-labelledby="height" min="1.50" max="2.20" step="0.01" placeholder="1.70">
+            <label for="weight">Peso(kg)</label>
+            <input type="range" min="40" max="140" step="1">
+            <input id="weight" type="number" aria-labelledby="weight" min="40" max="140" step="1" placeholder="70">
+            <input id="submit" type="submit" value="Calcula tu IMC">
+        </div>
+        <div>
+            <img id="formula" src="indiceIMC.png" alt="fórmula para calcular el IMC y relación entre IMC y condición física"></img>
+        </div>
+    </section>
+    <footer>
+        <h4></h4>
+    </footer>
+    <div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
