@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>IMC</title>
+    <link rel="icon" type="icon" href="img/logo.png">
+    <title>Calculadora de IMC</title>
 </head>
+
 <body>
     <header>
-        <h1>Calcula tu IMC</h1>
-        <h4>Descubre tu IMC y cómo mejorarlo</h4>
+        <div class="header">
+            <h1>Calcula Tu IMC</h1>
+            <h4>Descubre Tu IMC y Cómo Mejorarlo</h4>
+        </div>
     </header>
-    <section>
-        <div id="userInput">
-            <label for="Height">Altura(m)</label>
-            <input type="range" min="1.50" max="2.20" step="0.01">
-            <input id="height" type="number" aria-labelledby="height" min="1.50" max="2.20" step="0.01" placeholder="1.70">
-            <label for="weight">Peso(kg)</label>
-            <input type="range" min="40" max="140" step="1">
-            <input id="weight" type="number" aria-labelledby="weight" min="40" max="140" step="1" placeholder="70">
-            <input id="submit" type="submit" value="Calcula tu IMC">
-        </div>
-        <div>
-            <img id="formula" src="indiceIMC.png" alt="fórmula para calcular el IMC y relación entre IMC y condición física"></img>
-        </div>
-    </section>
+    <main>
+        <img id="mesotipos" src="img/mesotipos.png" alt="una imágen de los mesotipos en función del IMC">
+        <iframe id="video" src="" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <section id="userInput">
+
+            <img id="formula" src="img/formulas.png"
+                alt="la fórmula para calcular el IMC, peso dividido entre altura al cuadrado">
+            <label for="heightRange">Altura(m)</label>
+            <input id="heightRange" onchange="updateHeight()" type="range" min="1.50" max="2.20" step="0.01">
+            <input id="heightNumber" readonly="readonly" type="text" min="1.50" max="2.20" step="0.01"
+                placeholder="1.70 m">
+
+            <label for="weightRange">Peso(kg)</label>
+            <input id="weightRange" onchange="updateWeight()" type="range" min="40" max="140" step="1">
+            <input id="weightNumber" readonly="readonly" type="text" min="40" max="140" step="1" placeholder="70 kg">
+            <br><br>
+            <span id="imc"></span>
+        </section>
+        <section id="buttons">
+            <input id="submitIMC" class="history" type="submit" value="Calcula tu IMC" onclick="showIMC()">
+            <div>
+                <input id="history" class="history" type="submit" value="Historial" onclick="showHistory()">
+                <input id="resetHistory" class="history" type="submit" value="Reset" onclick="resetHistory()">
+            </div>
+        </section>
+        <section>
+            <p id="historyText"></p>
+        </section>
+    </main>
     <footer>
-        <h4></h4>
+        <h4>Esta valoración del estado físico no tiene en cuenta el porcentaje graso y de músculo del individuo, se basa
+            en valores medios. Ante cualquier duda recurra a un profesional, estos datos son sólo orientativos.</h4>
     </footer>
-    <div>
-        
-    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
